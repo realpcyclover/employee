@@ -173,8 +173,24 @@ public class Manager extends Validation {
                     System.out.println("Not found!!!");
                 }
                 break;
-        }
-    }
+            case 3:
+                 String fullname = sc.nextLine().toLowerCase().trim();
+                 int count = 0;
+                 for (Employee employee : list) {
+                        if (fullname.contains(employee.getFirstName().toLowerCase()) || fullname.contains(employee.getLastName().toLowerCase())) {
+                                count++;
+                                if (count == 1) {
+                                System.out.println("All employees found:");
+                             }
+                         System.out.println(employee.toString());
+                   }
+                   }
+                if (count == 0) {
+                        System.out.println("Not Found!!");
+                    }
+                    }
+                break;
+               }
 
     public void sortBySalary() {
         System.out.println("=======Sort=======");
